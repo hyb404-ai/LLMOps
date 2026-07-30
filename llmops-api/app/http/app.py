@@ -8,9 +8,13 @@ app - 模块描述
 创建日期: 2026/7/30 14:43
 """
 from injector import Injector
+import dotenv
 
 from internal.router import Router
 from internal.server import Http
+
+# 将env加载到环境变量中
+dotenv.load_dotenv()
 
 injector = Injector()
 app = Http(__name__, router=injector.get(Router))
