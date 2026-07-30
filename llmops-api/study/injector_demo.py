@@ -34,7 +34,7 @@ def child_configure(binder):
 
 
 if __name__ == "__main__":
-    parent_injector = Injector(configure)
+    parent_injector = Injector(modules=configure)
     injector = Injector(modules=child_configure, parent=parent_injector)
     b = injector.get(B)
     b.print()
