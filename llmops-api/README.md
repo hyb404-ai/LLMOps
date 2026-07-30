@@ -18,7 +18,7 @@ python App.py
 服务默认运行在 `http://127.0.0.1:5000`。可通过以下接口确认服务状态：
 
 ```bash
-curl http://127.0.0.1:5000/api/v1/health
+curl http://127.0.0.1:5000/api/health
 ```
 
 预期响应：
