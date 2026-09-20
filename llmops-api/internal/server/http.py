@@ -10,6 +10,7 @@ http - 模块描述
 import os
 
 from flask import Flask
+from flask_migrate import Migrate
 
 from config import Config
 from internal.exception import CustomException
@@ -25,6 +26,7 @@ class Http(Flask):
                  *args,
                  config: Config,
                  db: SQLAlchemy,
+                 migrate: Migrate,
                  router: Router,
                  **kwargs):
         # 1.调用父类构造函数初始化
@@ -38,6 +40,9 @@ class Http(Flask):
 
         # 4.初始化flask扩展
         db.init_app(self)
+        # with self.app_context():
+        #     db.create_all()
+        migrate.init_app(self, db, directory="internal/migration")
 
         # 注册应用路由
         router.register_router(self)

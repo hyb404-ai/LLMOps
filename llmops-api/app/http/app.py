@@ -7,6 +7,7 @@ app - 模块描述
 作者: huangyoubin
 创建日期: 2026/7/30 14:43
 """
+from flask_migrate import Migrate
 from injector import Injector
 import dotenv
 
@@ -25,6 +26,7 @@ injector = Injector([ExtensionModule])
 app = Http(__name__,
            config=config,
            db=injector.get(SQLAlchemy),
+           migrate=injector.get(Migrate),
            router=injector.get(Router))
 
 if __name__ == "__main__":
