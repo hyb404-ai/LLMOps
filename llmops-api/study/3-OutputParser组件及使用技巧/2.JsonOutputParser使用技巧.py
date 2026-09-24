@@ -8,7 +8,7 @@
 import dotenv
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.pydantic_v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
 dotenv.load_dotenv()
@@ -23,17 +23,21 @@ class Joke(BaseModel):
 
 
 parser = JsonOutputParser(pydantic_object=Joke)
+# print(parser.get_format_instructions())
 
 # 2.构建一个提示模板
 prompt = ChatPromptTemplate.from_template("请根据用户的提问进行回答。\n{format_instructions}\n{query}").partial(
     format_instructions=parser.get_format_instructions())
+print(prompt)
 
 # 3.构建一个大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-flash")
 
+message = llm.invoke(prompt.invoke({"query": "请讲一个关于程序员的冷笑话"}))
+# print(message)
 # 4.传递提示并进行解析
-joke = parser.invoke(llm.invoke(prompt.invoke({"query": "请讲一个关于程序员的冷笑话"})))
+joke = parser.invoke(message)
 
-print(type(joke))
-print(joke.get("punchline"))
-print(joke)
+# print(type(joke))
+# print(joke.get("punchline"))
+# print(joke)

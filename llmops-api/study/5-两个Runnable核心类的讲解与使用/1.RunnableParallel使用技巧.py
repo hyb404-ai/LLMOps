@@ -18,7 +18,7 @@ joke_prompt = ChatPromptTemplate.from_template("请讲一个关于{subject}的�
 poem_prompt = ChatPromptTemplate.from_template("请写一篇关于{subject}的诗，尽可能短一些")
 
 # 2.创建大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-flash")
 
 # 3.创建输出解析器
 parser = StrOutputParser()

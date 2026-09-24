@@ -31,7 +31,7 @@ prompt = ChatPromptTemplate.from_template("""请根据用户的问题回答，�
 用户的提问是: {query}""")
 
 # 2.构建大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-flash")
 
 # 3.输出解析器
 parser = StrOutputParser()

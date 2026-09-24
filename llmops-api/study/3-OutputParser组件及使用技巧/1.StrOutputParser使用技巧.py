@@ -16,7 +16,7 @@ dotenv.load_dotenv()
 prompt = ChatPromptTemplate.from_template("{query}")
 
 # 2.构建大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-flash")
 
 # 3.创建字符串输出解析器
 parser = StrOutputParser()
