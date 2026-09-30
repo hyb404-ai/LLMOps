@@ -38,7 +38,7 @@ jason@psychic.dev"""
 documents = [Document(page_content=page_content)]
 
 # 2.构建问答转换器并转换
-qa_transformer = DoctranQATransformer(openai_api_model="gpt-3.5-turbo-16k")
+qa_transformer = DoctranQATransformer(openai_api_model="deepseek-v4-pro")
 transformer_documents = qa_transformer.transform_documents(documents)
 
 # 3.输出内容

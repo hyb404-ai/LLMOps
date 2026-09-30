@@ -20,7 +20,7 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # 2.创建大语言模型
-llm = ChatOpenAI(model="gpt-4-turbo")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 # 3.创建链应用
 chain = create_stuff_documents_chain(prompt=prompt, llm=llm)

@@ -14,7 +14,7 @@ dotenv.load_dotenv()
 
 dalle = OpenAIDALLEImageGenerationTool(api_wrapper=DallEAPIWrapper(model="dall-e-3"))
 
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 llm_with_tools = llm.bind_tools([dalle], tool_choice="openai_dalle")
 
 chain = llm_with_tools | (lambda msg: msg.tool_calls[0]["args"]) | dalle

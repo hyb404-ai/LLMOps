@@ -27,7 +27,7 @@ class HypotheticalQuestions(BaseModel):
 prompt = ChatPromptTemplate.from_template("生成一个包含3个假设性问题的列表，这些问题可以用于回答下面的文档:\n\n{doc}")
 
 # 2.创建大语言模型，并绑定对应的规范化输出结构
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 structured_llm = llm.with_structured_output(HypotheticalQuestions)
 
 # 3.创建链应用

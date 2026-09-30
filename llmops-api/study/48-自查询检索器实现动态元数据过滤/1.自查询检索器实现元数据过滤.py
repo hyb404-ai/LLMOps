@@ -76,7 +76,7 @@ metadata_filed_info = [
 
 # 3.创建自查询检索
 self_query_retriever = SelfQueryRetriever.from_llm(
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0),
+    llm=ChatOpenAI(model="deepseek-v4-pro", temperature=0),
     vectorstore=db,
     document_contents="电影的名字",
     metadata_field_info=metadata_filed_info,

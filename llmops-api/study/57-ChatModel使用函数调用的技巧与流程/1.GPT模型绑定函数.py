@@ -101,13 +101,13 @@ tools = [tool for tool in tool_dict.values()]
 prompt = ChatPromptTemplate.from_messages([
     (
         "system",
-        "你是由OpenAI开发的聊天机器人，可以帮助用户回答问题，必要时刻请调用工具帮助用户解答，如果问题需要多个工具回答，请一次性调用所有工具，不要分步调用"
+        "你是由DeepSeek开发的聊天机器人，可以帮助用户回答问题，必要时刻请调用工具帮助用户解答，如果问题需要多个工具回答，请一次性调用所有工具，不要分步调用"
     ),
     ("human", "{query}"),
 ])
 
 # 3.创建大语言模型并绑定工具
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 llm_with_tool = llm.bind_tools(tools=tools)
 
 # 4.创建链应用

@@ -46,14 +46,14 @@ tools = [google_serper, dalle]
 
 # 2.定义工具调用agent提示词模板
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "你是由OpenAI开发的聊天机器人，善于帮助用户解决问题。"),
+    ("system", "你是由DeepSeek开发的聊天机器人，善于帮助用户解决问题。"),
     ("placeholder", "{chat_history}"),
     ("human", "{input}"),
     ("placeholder", "{agent_scratchpad}"),
 ])
 
 # 3.创建大语言模型
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 # 4.创建agent与agent执行者
 agent = create_tool_calling_agent(

@@ -30,7 +30,7 @@ while True:
     # 5.发起聊天对话
     print("AI: ", flush=True, end="")
     system_prompt = (
-        "你是OpenAI开发的ChatGPT聊天机器人，可以根据相应的上下文回复用户信息，上下文里存放的是人类与你对话的信息列表。\n\n"
+        "你是DeepSeek开发的DeepSeek聊天机器人，可以根据相应的上下文回复用户信息，上下文里存放的是人类与你对话的信息列表。\n\n"
         f"<context>{chat_history}</context>\n\n"
     )
     messages: list[ChatCompletionMessageParam] = [

@@ -20,7 +20,7 @@ class QAExtra(BaseModel):
     answer: str = Field(description="假设性问题对应的答案")
 
 
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 structured_llm = llm.with_structured_output(QAExtra, method="json_mode")
 
 prompt = ChatPromptTemplate.from_messages([

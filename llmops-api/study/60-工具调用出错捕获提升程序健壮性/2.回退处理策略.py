@@ -19,8 +19,8 @@ def complex_tool(int_arg: int, float_arg: float, dict_arg: dict) -> int:
 
 
 # 1.创建大语言模型并绑定工具
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k").bind_tools([complex_tool])
-better_llm = ChatOpenAI(model="gpt-4o").bind_tools([complex_tool])
+llm = ChatOpenAI(model="deepseek-flash").bind_tools([complex_tool])
+better_llm = ChatOpenAI(model="deepseek-flash").bind_tools([complex_tool])
 
 # 2.创建链并执行工具
 better_chain = (better_llm | (lambda msg: msg.tool_calls[0]["args"]) | complex_tool)

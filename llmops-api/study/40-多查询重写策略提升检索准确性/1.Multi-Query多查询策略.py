@@ -30,7 +30,7 @@ retriever = db.as_retriever(search_type="mmr")
 # 2.创建多查询检索器
 multi_query_retriever = MultiQueryRetriever.from_llm(
     retriever=retriever,
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0),
+    llm=ChatOpenAI(model="deepseek-v4-pro", temperature=0),
     include_original=True,
 )
 

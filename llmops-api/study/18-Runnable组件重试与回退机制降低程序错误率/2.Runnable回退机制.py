@@ -13,9 +13,9 @@ from langchain_openai import ChatOpenAI
 
 dotenv.load_dotenv()
 
-# 1.构建prompt与LLM，并将model切换为gpt-3.5-turbo-18k引发出错
+# 1.构建prompt与LLM，并将model切换为不存在的deepseek-v4-pro-18k引发出错
 prompt = ChatPromptTemplate.from_template("{query}")
-llm = ChatOpenAI(model="gpt-3.5-turbo-18k").with_fallbacks([QianfanChatEndpoint()])
+llm = ChatOpenAI(model="deepseek-v4-pro-18k").with_fallbacks([QianfanChatEndpoint()])
 
 # 2.构建链应用
 chain = prompt | llm | StrOutputParser()

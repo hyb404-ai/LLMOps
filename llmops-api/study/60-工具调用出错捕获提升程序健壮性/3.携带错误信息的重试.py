@@ -57,7 +57,7 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # 2.创建大语言模型并绑定工具
-llm = ChatOpenAI(model="gpt-4o", temperature=0).bind_tools(
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0).bind_tools(
     tools=[complex_tool], tool_choice="complex_tool",
 )
 

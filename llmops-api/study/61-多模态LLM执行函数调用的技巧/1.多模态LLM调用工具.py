@@ -87,7 +87,7 @@ weather_prompt = ChatPromptTemplate.from_template("""请整理下传递的城市
 </weather>""")
 
 # 2.构建LLM并绑定工具
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 llm_with_tools = llm.bind_tools(tools=[GaodeWeatherTool()], tool_choice="gaode_weather")
 
 # 3.创建链应用并执行

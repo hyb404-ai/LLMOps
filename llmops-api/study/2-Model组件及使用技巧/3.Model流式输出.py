@@ -15,7 +15,7 @@ dotenv.load_dotenv()
 
 # 1.编排prompt
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "你是OpenAI开发的聊天机器人，请回答用户的问题，现在的时间是{now}"),
+    ("system", "你是DeepSeek开发的聊天机器人，请回答用户的问题，现在的时间是{now}"),
     ("human", "{query}"),
 ]).partial(now=datetime.now())
 

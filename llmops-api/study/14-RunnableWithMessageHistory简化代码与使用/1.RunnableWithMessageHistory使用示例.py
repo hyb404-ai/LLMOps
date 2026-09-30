@@ -30,7 +30,7 @@ prompt = ChatPromptTemplate.from_messages([
     MessagesPlaceholder("history"),
     ("human", "{query}"),
 ])
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 # 2.构建链
 chain = prompt | llm | StrOutputParser()

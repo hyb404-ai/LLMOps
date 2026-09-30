@@ -33,7 +33,7 @@ memory_variable = memory.load_memory_variables({})
 print("保存前:", memory_variable)
 
 # content = chain.invoke({"query": "你好，我是慕小课你是谁", "chat_history": memory_variable.get("chat_history")})
-memory.save_context({"query": "你好，我是慕小课你是谁"}, {"output": "你好，我是ChatGPT,有什么可以帮到您的"})
+memory.save_context({"query": "你好，我是慕小课你是谁"}, {"output": "你好，我是DeepSeek,有什么可以帮到您的"})
 
 # 2. save_context 写入后,再取一次就能拿到刚才那轮问答
 memory_variable = memory.load_memory_variables({})

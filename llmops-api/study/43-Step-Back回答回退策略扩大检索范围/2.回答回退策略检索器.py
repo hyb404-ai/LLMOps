@@ -82,7 +82,7 @@ retriever = db.as_retriever(search_type="mmr")
 # 2.创建回答回退检索器
 step_back_retriever = StepBackRetriever(
     retriever=retriever,
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0),
+    llm=ChatOpenAI(model="deepseek-v4-pro", temperature=0),
 )
 
 # 3.检索文档

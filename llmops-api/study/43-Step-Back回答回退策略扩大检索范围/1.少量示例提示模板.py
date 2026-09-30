@@ -38,7 +38,7 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 # 4.创建大语言模型与链
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 chain = prompt | llm | StrOutputParser()
 
 # 5.调用链获取结果

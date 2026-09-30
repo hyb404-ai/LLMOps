@@ -66,7 +66,7 @@ retriever = db.as_retriever(search_type="mmr")
 # 2.创建HyDE检索器
 hyde_retriever = HyDERetriever(
     retriever=retriever,
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0),
+    llm=ChatOpenAI(model="deepseek-v4-pro", temperature=0),
 )
 
 # 3.检索文档

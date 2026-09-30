@@ -24,7 +24,7 @@ print(prompt_value.to_messages())
 print("==================")
 
 chat_prompt = ChatPromptTemplate.from_messages([
-    ("system", "你是OpenAI开发的聊天机器人，请根据用户的提问进行回复，当前的时间为:{now}"),
+    ("system", "你是DeepSeek开发的聊天机器人，请根据用户的提问进行回复，当前的时间为:{now}"),
     # 有时候可能还有其他的消息，但是不确定
     MessagesPlaceholder("chat_history"),
     HumanMessagePromptTemplate.from_template("请讲一个关于{subject}的冷笑话"),
@@ -32,7 +32,7 @@ chat_prompt = ChatPromptTemplate.from_messages([
 chat_prompt_value = chat_prompt.invoke({
     "chat_history": [
         ("human", "我叫慕小课"),
-        AIMessage("你好，我是ChatGPT，有什么可以帮到您"),
+        AIMessage("你好，我是DeepSeek，有什么可以帮到您"),
     ],
     "subject": "程序员",
 })

@@ -29,7 +29,7 @@ docs = loader.load_and_split(text_splitter)
 summary_chain = (
         {"doc": lambda x: x.page_content}
         | ChatPromptTemplate.from_template("请总结以下文档的内容：\n\n{doc}")
-        | ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+        | ChatOpenAI(model="deepseek-v4-pro", temperature=0)
         | StrOutputParser()
 )
 

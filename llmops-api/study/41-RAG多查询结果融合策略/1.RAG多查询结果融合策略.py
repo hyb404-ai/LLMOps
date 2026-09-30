@@ -75,7 +75,7 @@ retriever = db.as_retriever(search_type="mmr")
 
 rag_fusion_retriever = RAGFusionRetriever.from_llm(
     retriever=retriever,
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0),
+    llm=ChatOpenAI(model="deepseek-v4-pro", temperature=0),
 )
 
 # 3.执行检索

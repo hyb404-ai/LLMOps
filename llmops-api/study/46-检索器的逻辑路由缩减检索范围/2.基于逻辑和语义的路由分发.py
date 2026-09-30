@@ -34,7 +34,7 @@ def choose_route(result: RouteQuery) -> str:
 
 
 # 1.构建大语言模型并进行结构化输出
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 structured_llm = llm.with_structured_output(RouteQuery)
 
 # 2.创建路由逻辑链

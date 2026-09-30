@@ -22,7 +22,7 @@ class RouteQuery(BaseModel):
 
 
 # 1.创建绑定结构化输出的大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 structured_llm = llm.with_structured_output(RouteQuery)
 
 # 2.构建一个问题

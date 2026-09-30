@@ -16,19 +16,19 @@ dotenv.load_dotenv()
 
 # 1.创建提示模板&定义默认大语言模型
 prompt = ChatPromptTemplate.from_template("{query}")
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k").configurable_alternatives(
+llm = ChatOpenAI(model="deepseek-flash").configurable_alternatives(
     ConfigurableField(id="llm"),
-    default_key="gpt-3.5",
-    gpt4=ChatOpenAI(model="gpt-4o"),
+    default_key="deepseek_flash",
+    deepseek_pro=ChatOpenAI(model="deepseek-v4-pro"),
     wenxin=QianfanChatEndpoint(),
 )
 
 # 2.构建链应用
 chain = prompt | llm | StrOutputParser()
 
-# 3.调用链并传递配置信息，并切换到文心一言模型或者gpt4模型
+# 3.调用链并传递配置信息，并切换到文心一言模型或者deepseek-v4-pro模型
 content = chain.invoke(
     {"query": "你好，你是什么模型呢?"},
-    config={"configurable": {"llm": "gpt4o"}}
+    config={"configurable": {"llm": "deepseek_pro"}}
 )
 print(content)

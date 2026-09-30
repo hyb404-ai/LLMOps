@@ -53,7 +53,7 @@ prompt = ChatPromptTemplate.from_template(
 )
 
 # 3.创建大语言模型与智能体
-llm = ChatOpenAI(model="gpt-4o", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 agent = create_react_agent(
     llm=llm,
     prompt=prompt,

@@ -29,7 +29,7 @@ def try_except_tool(tool_args: dict, config: RunnableConfig) -> Any:
 
 
 # 1.创建大语言模型并绑定工具
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 llm_with_tools = llm.bind_tools([complex_tool])
 
 # 2.创建链并执行工具

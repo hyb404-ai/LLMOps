@@ -18,18 +18,18 @@ dotenv.load_dotenv()
 
 # 1.创建提示模板&记忆
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "你是OpenAI开发的聊天机器人，请根据对应的上下文回复用户问题"),
+    ("system", "你是DeepSeek开发的聊天机器人，请根据对应的上下文回复用户问题"),
     MessagesPlaceholder("history"),  # 需要的history其实是一个列表
     ("human", "{query}"),
 ])
 memory = ConversationTokenBufferMemory(
     return_messages=True,
     input_key="query",
-    llm=ChatOpenAI()
+    llm=ChatOpenAI(model="deepseek-v4-pro")
 )
 
 # 2.创建大语言模型
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 # 3.构建链应用
 chain = RunnablePassthrough.assign(

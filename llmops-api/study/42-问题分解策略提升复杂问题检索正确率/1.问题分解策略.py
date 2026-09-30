@@ -36,7 +36,7 @@ decomposition_prompt = ChatPromptTemplate.from_template(
 decomposition_chain = (
         {"question": RunnablePassthrough()}
         | decomposition_prompt
-        | ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+        | ChatOpenAI(model="deepseek-v4-pro", temperature=0)
         | StrOutputParser()
         | (lambda x: x.strip().split("\n"))
 )
@@ -79,7 +79,7 @@ chain = (
             "context": itemgetter("question") | retriever,
         }
         | prompt
-        | ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+        | ChatOpenAI(model="deepseek-v4-pro", temperature=0)
         | StrOutputParser()
 )
 

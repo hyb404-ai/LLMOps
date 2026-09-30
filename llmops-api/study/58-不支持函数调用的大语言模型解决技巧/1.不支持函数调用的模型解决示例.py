@@ -118,7 +118,7 @@ def invoke_tool(
     return requested_tool.invoke(tool_call_request.get("arguments"), config=config)
 
 
-system_prompt = """你是一个由OpenAI开发的聊天机器人，可以访问以下工具。
+system_prompt = """你是一个由DeepSeek开发的聊天机器人，可以访问以下工具。
 以下是每个工具的名称和描述：
 
 {rendered_tools}
@@ -131,7 +131,7 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "{query}")
 ]).partial(rendered_tools=render_text_description_and_args(tools))
 
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+llm = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 
 chain = prompt | llm | JsonOutputParser() | RunnablePassthrough.assign(output=invoke_tool)
 

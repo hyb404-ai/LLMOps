@@ -17,7 +17,7 @@ dotenv.load_dotenv()
 prompt = PromptTemplate.from_template("请生成一个小于{x}的随机整数")
 
 # 2.创建LLM大语言模型，并配置temperature参数为可在运行时配置，配置键位llm_temperature
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k").configurable_fields(
+llm = ChatOpenAI(model="deepseek-v4-pro").configurable_fields(
     temperature=ConfigurableField(
         id="llm_temperature",
         name="大语言模型的温度",

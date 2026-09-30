@@ -32,7 +32,7 @@ embd = HuggingFaceEmbeddings(
     cache_folder="./embeddings/",
     encode_kwargs={"normalize_embeddings": True},
 )
-model = ChatOpenAI(model="gpt-3.5-turbo-16k", temperature=0)
+model = ChatOpenAI(model="deepseek-v4-pro", temperature=0)
 db = WeaviateVectorStore(
     client=weaviate.connect_to_wcs(
         cluster_url="https://mbakeruerziae6psyex7ng.c0.us-west3.gcp.weaviate.cloud",

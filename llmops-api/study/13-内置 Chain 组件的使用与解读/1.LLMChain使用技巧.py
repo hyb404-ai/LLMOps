@@ -13,7 +13,7 @@ from langchain_openai import ChatOpenAI
 dotenv.load_dotenv()
 
 prompt = ChatPromptTemplate.from_template("请讲一个关于{subject}主题的冷笑话")
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 chain = LLMChain(prompt=prompt, llm=llm)
 

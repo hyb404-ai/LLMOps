@@ -11,7 +11,7 @@ from langchain_openai import ChatOpenAI
 
 dotenv.load_dotenv()
 
-llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 chain = ConversationChain(llm=llm)
 
 content = chain.invoke({"input": "你好，我是慕小课，我喜欢打篮球还有游泳，你喜欢什么运动呢？"})

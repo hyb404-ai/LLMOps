@@ -72,7 +72,7 @@ Question: {input}
 ])
 
 # 3.创建大语言模型
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="deepseek-v4-pro")
 
 # 4.创建agent与agent执行者
 agent = create_xml_agent(

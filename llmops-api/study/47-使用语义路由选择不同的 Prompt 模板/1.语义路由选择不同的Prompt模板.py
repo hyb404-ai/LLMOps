@@ -51,7 +51,7 @@ def prompt_router(input) -> ChatPromptTemplate:
 chain = (
         {"query": RunnablePassthrough()}
         | RunnableLambda(prompt_router)
-        | ChatOpenAI(model="gpt-3.5-turbo-16k")
+        | ChatOpenAI(model="deepseek-v4-pro")
         | StrOutputParser()
 )
 
